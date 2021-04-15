@@ -1,0 +1,25 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+@*<h1>@ViewData["Title"]</h1>*@
+@using ContosoCrafts.WebSite.Models
+<div class="card-columns">
+    @foreach (var item in Model.Products)
+    {
+        <div class="card">
+            <div class="card-img" style="background-image: url('@item.Image');">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@item.Title</h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    <button data-toggle="modal" data-target="#productModal" class="btn btn-primary">More Info</button>
+                </small>
+            </div>
+        </div>
+    }
+</div>
+
